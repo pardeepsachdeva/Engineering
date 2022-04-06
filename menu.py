@@ -10,21 +10,29 @@ root.title("Engimeerimg Calculation")
 def sec_win1():                                                   #second window for area
     win1 = Tk()
     win1.title("Area")
-    win1.geometry("250x200")
+    win1.geometry("300x200")
+
+    def Find_Area(length,width):
+        return length*width
 
     label_formula= Label(win1,text="Area  =",font="bold").grid(row=0,column=1)
     label_formula = Label(win1,text="length X width",font="bold").grid(row=0,column=2)
 
-    label2 = Label(win1,text="Lenght").grid(row=1,column=1)
-    entry2 = Entry(win1).grid(row=1,column=2)
+    label_length = Label(win1,text="Lenght").grid(row=1,column=1)
+    length = Entry(win1).grid(row=1,column=2)
 
-    label2 = Label(win1,text="Width").grid(row=2,column=1)
-    entry2 = Entry(win1).grid(row=2,column=2)
+    label_width = Label(win1,text="Width").grid(row=2,column=1)
+    width = Entry(win1).grid(row=2,column=2)
 
-    button2 = Button(win1,text="Find Area",bg="#beefd4",font="Bold").grid(row=4,column=1)
-    entry2 = Entry(win1,bg="#beefd4",bd=3).grid(row=4,column=2)
+    button_area = Button(win1,text="Find Area",bg="#beefd4",font="Bold",command=lambda:Find_Area()).grid(row=4,column=1)
+    
+    area1 = Find_Area(length.get(),width.get())
+
+    label_out = Label(win1,text=area1).grid(row=4,column=2)
+   
+    
   
-
+   
 
 # .......................Volume................................
 def third_win2():                                                   #third window for Volume
